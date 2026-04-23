@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: inherit;
+}
+
+body {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  font-family: var(--font-luckiest-guy);
+  text-align: center;
+}
+
+h1 {
+  font-size: var(--text-3xl);
+  text-shadow: 5px 5px 10px black;
+  background: linear-gradient(
+    to bottom,
+    hsla(var(--secondary-hs), 80%, 0.9),
+    hsla(var(--secondary-hs), 30%, 0.9)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: hsla(var(--secondary-hs), 50%, 0.7);
+}

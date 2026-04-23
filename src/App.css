@@ -1,0 +1,88 @@
+:root {
+  /* Font Families */
+  --font-luckiest-guy: "Luckiest Guy", cursive;
+  --font-sour-gummy: "Sour Gummy", sans-serif;
+
+  /* Color Bases */
+  --white-hs: 0, 0%;
+  --primary-hs: 240, 100%;
+  --secondary-hs: 60, 100%;
+  --accent-hs: 134, 61%;
+  --fire-hs: 20, 100%;
+  --water-hs: 200, 100%;
+  --grass-hs: 110, 100%;
+  --electric-hs: 45, 100%;
+  --psychic-hs: 330, 100%;
+  --ice-hs: 180, 100%;
+  --dragon-hs: 260, 100%;
+  --ghost-hs: 270, 50%;
+  --poison-hs: 290, 80%;
+  --ground-hs: 35, 60%;
+  --rock-hs: 40, 30%;
+  --bug-hs: 75, 90%;
+  --normal-hs: 0, 0%;
+  --fighting-hs: 0, 75%;
+  --flying-hs: 230, 60%;
+  --steel-hs: 210, 20%;
+  --fairy-hs: 340, 80%;
+  --dark-hs: 0, 0%;
+
+  /* Colors */
+  --color-primary: hsl(240, 100%, 50%);
+  --color-secondary: hsl(60, 100%, 50%);
+  --color-accent: hsl(134, 61%, 50%);
+  --color-fire: hsl(20, 100%, 50%);
+  --color-water: hsl(200, 100%, 50%);
+  --color-grass: hsl(110, 100%, 50%);
+  --color-electric: hsl(45, 100%, 50%);
+  --color-psychic: hsl(330, 100%, 50%);
+  --color-ice: hsl(180, 100%, 50%);
+  --color-dragon: hsl(260, 100%, 50%);
+  --color-ghost: hsl(270, 50%, 50%);
+  --color-poison: hsl(290, 80%, 50%);
+  --color-ground: hsl(35, 60%, 50%);
+  --color-rock: hsl(40, 30%, 50%);
+  --color-bug: hsl(75, 90%, 50%);
+  --color-normal: hsl(0, 0%, 50%);
+  --color-fighting: hsl(230, 60%, 50%);
+  --color-flying: hsl(0, 75%, 50%);
+  --color-steel: hsl(210, 20%, 50%);
+  --color-fairy: hsl(340, 80%, 50%);
+  --color-dark: hsl(0, 0%, 25%);
+
+  /* Font Sizes */
+  --text-sm: 0.85rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 3rem;
+  --text-4xl: 4rem;
+  --text-sign: 2.5rem;
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Standard Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Border radius' */
+  --rounded-sm: 0.25rem;
+  --rounded-md: 0.5rem;
+  --rounded-lg: 1rem;
+
+  /* Positioning */
+  --z-below: -10;
+  --z-base: 0;
+  --z-middleground: 100;
+  --z-foreground: 200;
+  --z-overlay: 500;
+  --z-debug: 9999;
+}
