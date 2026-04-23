@@ -67,6 +67,9 @@
   --space-lg: 1.5rem;
   --space-xl: 2rem;
   --space-2xl: 3rem;
+  --space-half: 50%;
+  --space-three-quarters: 75%;
+  --space-full: 100%;
 
   /* Standard Transitions */
   --transition-fast: 0.15s ease;
@@ -85,4 +88,65 @@
   --z-foreground: 200;
   --z-overlay: 500;
   --z-debug: 9999;
+
+  /* Glassmorphism */
+  --glassmorphism-blur: 10px;
+}
+
+.type-fire {
+  --type-accent: var(--fire-hs);
+}
+.type-water {
+  --type-accent: var(--water-hs);
+}
+.type-grass {
+  --type-accent: var(--grass-hs);
+}
+.type-electric {
+  --type-accent: var(--electric-hs);
+}
+.type-psychic {
+  --type-accent: var(--psychic-hs);
+}
+.type-ice {
+  --type-accent: var(--ice-hs);
+}
+.type-dragon {
+  --type-accent: var(--dragon-hs);
+}
+.type-ghost {
+  --type-accent: var(--ghost-hs);
+}
+.type-poison {
+  --type-accent: var(--poison-hs);
+}
+.type-ground {
+  --type-accent: var(--ground-hs);
+}
+.type-rock {
+  --type-accent: var(--rock-hs);
+}
+.type-bug {
+  --type-accent: var(--bug-hs);
+}
+.type-normal {
+  --type-accent: var(--normal-hs);
+}
+.type-fighting {
+  --type-accent: var(--fighting-hs);
+}
+.type-flying {
+  --type-accent: var(--flying-hs);
+}
+.type-steel {
+  --type-accent: var(--steel-hs);
+}
+.type-fairy {
+  --type-accent: var(--fairy-hs);
+}
+.type-dark {
+  --type-accent: var(--dark-hs);
+}
+[class*="type-"] {
+  background-color: hsla(var(--type-accent), 60%, 0.6);
 }

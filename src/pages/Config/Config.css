@@ -1,0 +1,54 @@
+.config,
+.config ul,
+.preview,
+.preview__buttons,
+.prep,
+.prep__options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.config ul {
+  list-style-type: none;
+}
+
+.config,
+.preview,
+.prep {
+  flex-direction: column;
+}
+
+.config form,
+.preview {
+  width: 100%;
+}
+
+.preview {
+  color: var(--color-primary);
+  width: var(--space-full);
+}
+
+.config form {
+  place-items: center;
+}
+
+.preview h2 {
+  color: var(--color-secondary);
+}
+
+.preview__buttons {
+  gap: var(--space-md);
+}
+
+.card {
+  border-radius: var(--rounded-md);
+  width: var(--space-three-quarters);
+  filter: drop-shadow(
+    0 10px 15px hsla(var(--type-accent, 0, 0%), 50%, 10%, 0.5)
+  );
+  -webkit-backdrop-filter: blur(var(--glassmorphism-blur));
+  backdrop-filter: blur(var(--glassmorphism-blur));
+  border: 1px solid hsla(var(--type-accent), 70%, 0.6);
+}

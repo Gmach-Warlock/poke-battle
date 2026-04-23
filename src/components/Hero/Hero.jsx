@@ -1,12 +1,19 @@
-import React from "react";
+import { useNavigate } from "react-router";
 import "./Hero.css";
 
 function Hero() {
+  const navigate = useNavigate();
+
+  const handleStartConfig = () => {
+    navigate("/config");
+  };
   return (
     <div className="hero">
       <h1>Poke Battle</h1>
-      <span>Battle another Pokemon One on One</span>
-      <button className="btn btn--cta">Battle!</button>
+      <p>Battle one on one!</p>
+      <button type="button" onClick={handleStartConfig}>
+        Battle
+      </button>
     </div>
   );
 }

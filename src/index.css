@@ -24,3 +24,22 @@ h1 {
   background-clip: text;
   -webkit-text-fill-color: hsla(var(--secondary-hs), 50%, 0.7);
 }
+
+h2,
+h3 {
+  font-size: var(--text-lg);
+  padding: var(--space-md);
+}
+
+button,
+input {
+  padding: var(--space-xs);
+  margin-block: var(--space-xs);
+}
+
+button {
+  background-color: hsla(var(--secondary-hs), 50%, 0.9);
+  color: var(--color-primary);
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: var(--rounded-sm);
+}

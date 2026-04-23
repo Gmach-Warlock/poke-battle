@@ -1,33 +1,26 @@
-import { useReducer } from "react";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router";
 import "./App.css";
-import Header from "./components/Header/Header";
-import Hero from "./components/Hero/Hero";
-
-function matchReducer(state, action) {
-  switch (action.type) {
-    case "startPlaying": {
-      return {
-        ...state,
-        isPlaying: !state.isPlaying,
-      };
-    }
-  }
-  throw Error("Unknown action: " + action.type);
-}
+import Root from "./Root";
+import Home from "./pages/Home/Home";
+import Config from "./pages/Config/Config";
 
 function App() {
-  const [match, dispatch] = useReducer(matchReducer, {
-    isPlaying: false,
-    player: null,
-    opponent: null,
-    winner: "",
-    playersTurn: true,
-  });
-
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Root />}>
+        <Route index element={<Home />} />
+        <Route path="/config" element={<Config />} />
+      </Route>,
+    ),
+  );
   return (
     <>
-      <Header />
-      <Hero match={match} dispatch={dispatch} />
+      <RouterProvider router={router} />
     </>
   );
 }
