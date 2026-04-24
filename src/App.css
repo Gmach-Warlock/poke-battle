@@ -147,6 +147,31 @@
 .type-dark {
   --type-accent: var(--dark-hs);
 }
-[class*="type-"] {
+[class^="type-"] {
   background-color: hsla(var(--type-accent), 60%, 0.6);
+}
+
+/* When the parent has .is-critical, override the accent variable */
+.type-is-critical {
+  --type-accent: 0, 100%;
+  animation: pulse-red 2s infinite;
+}
+
+/* All your messages and stats will now inherit this red accent */
+.status-msg,
+.hp-stat {
+  color: hsl(var(--type-accent), 50%, 50%);
+  transition: color 0.3s ease;
+}
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0);
+  }
+  50% {
+    box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+  100% {
+    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0);
+  }
 }

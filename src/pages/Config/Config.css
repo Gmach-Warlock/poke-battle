@@ -3,11 +3,13 @@
 .preview,
 .preview__buttons,
 .prep,
-.prep__options {
+.prep__options,
+.random {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: var(--space-sm);
+  width: var(--space-full);
 }
 
 .config ul {
@@ -39,7 +41,12 @@
 }
 
 .preview__buttons {
+  margin-block: var(--space-md);
   gap: var(--space-md);
+}
+
+.btn--begin {
+  margin-inline: var(--space-sm);
 }
 
 .card {
@@ -50,5 +57,14 @@
   );
   -webkit-backdrop-filter: blur(var(--glassmorphism-blur));
   backdrop-filter: blur(var(--glassmorphism-blur));
+  background-color: hsla(var(--type-accent), 60%, 0.6);
   border: 1px solid hsla(var(--type-accent), 70%, 0.6);
+}
+
+.confirmation-not-ready {
+  display: none;
+}
+
+.confirmation-ready {
+  display: block;
 }
