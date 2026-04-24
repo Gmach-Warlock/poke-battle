@@ -68,22 +68,23 @@ function Config() {
       </div>
 
       <div className="preview">
-        <h2>Preview</h2>
+        <h2 className="preview__title">Preview</h2>
         {preview && (
           <div
             className={`card preview__card type-${preview?.types[0].type.name}`}
           >
             <h3>{preview?.name ?? "Undefined Name"}</h3>
+            <p>{preview?.types[0].type.name}</p>
             <img
               src={preview?.sprites.front_default ?? ""}
               alt={preview?.name ?? "Undefined Img"}
             />
             <p>Moves</p>
             <ul>
-              <li>{preview?.moves[0].move.name}</li>
-              <li>{preview?.moves[1].move.name}</li>
-              <li>{preview?.moves[2].move.name}</li>
-              <li>{preview?.moves[3].move.name}</li>
+              <li>{preview?.moves[0]?.move.name}</li>
+              <li>{preview?.moves[1]?.move.name}</li>
+              <li>{preview?.moves[2]?.move.name}</li>
+              <li>{preview?.moves[3]?.move.name}</li>
             </ul>
             <div className="preview__buttons">
               <button type="button" onClick={handleSetPlayer}>
@@ -110,7 +111,7 @@ function Config() {
           Fight
         </button>
       </div>
-      <div className={`confirmation-${status}`}>
+      <div className={`confirmation__${status}`}>
         <h3>Are you sure this ok?</h3>
       </div>
     </div>

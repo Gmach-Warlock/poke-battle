@@ -67,6 +67,7 @@
   --space-lg: 1.5rem;
   --space-xl: 2rem;
   --space-2xl: 3rem;
+  --space-forty: 40%;
   --space-half: 50%;
   --space-three-quarters: 75%;
   --space-full: 100%;
@@ -150,6 +151,22 @@
 [class^="type-"] {
   background-color: hsla(var(--type-accent), 60%, 0.6);
 }
+[class*="type-flying"],
+[class*="type-steel"],
+[class*="type-dragon"],
+[class*="type-ghost"],
+[class*="type-poison"],
+[class*="type-water"],
+[class*="type-psychic"],
+[class*="type-rock"],
+[class*="type-fire"],
+[class*="type-dark"],
+[class*="type-fighting"],
+[class*="type-normal"],
+[class*="type-ground"],
+[class*="type-fairy"] {
+  color: var(--color-secondary);
+}
 
 /* When the parent has .is-critical, override the accent variable */
 .type-is-critical {
@@ -157,7 +174,6 @@
   animation: pulse-red 2s infinite;
 }
 
-/* All your messages and stats will now inherit this red accent */
 .status-msg,
 .hp-stat {
   color: hsl(var(--type-accent), 50%, 50%);

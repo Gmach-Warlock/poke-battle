@@ -36,7 +36,7 @@
   place-items: center;
 }
 
-.preview h2 {
+.preview__title {
   color: var(--color-secondary);
 }
 
@@ -50,6 +50,7 @@
 }
 
 .card {
+  padding-inline: var(--space-xs);
   border-radius: var(--rounded-md);
   width: var(--space-three-quarters);
   filter: drop-shadow(
@@ -61,10 +62,10 @@
   border: 1px solid hsla(var(--type-accent), 70%, 0.6);
 }
 
-.confirmation-not-ready {
+.confirmation__not-ready {
   display: none;
 }
 
-.confirmation-ready {
+.confirmation__ready {
   display: block;
 }
