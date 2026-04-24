@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { fetchByName, fetchRandomPokemon } from "../../utils/fetches";
 import "./Config.css";
-import { useOutletContext } from "react-router";
+import { useNavigate, useOutletContext } from "react-router";
 
 function Config() {
   const { battleState, dispatch } = useOutletContext();
   const [searchTerms, setSearchTerms] = useState("");
   const [preview, setPreview] = useState(null);
   const [status, setStatus] = useState("not-ready");
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setSearchTerms(e.target.value);
   };
@@ -39,6 +40,14 @@ function Config() {
       alert("Please Make sure you have a player and opponent selected!");
 
     setStatus("ready");
+  };
+
+  const handleConfirmStart = () => {
+    navigate("/arena");
+  };
+
+  const handleCancelStart = () => {
+    setStatus("not-ready");
   };
 
   return (
@@ -111,8 +120,29 @@ function Config() {
           Fight
         </button>
       </div>
-      <div className={`confirmation__${status}`}>
+
+      <div className={`confirmation__${status} overlay`}>
         <h3>Are you sure this ok?</h3>
+        <span>{battleState.player?.name ?? ""}</span>
+        <span> vs </span>
+        <span>{battleState.opponent?.name ?? ""}</span>
+        <br />
+        <div className="confirmation__actions action">
+          <button
+            type="button"
+            className="btn btn--confirm"
+            onClick={handleConfirmStart}
+          >
+            Ok
+          </button>
+          <button
+            type="button"
+            className="btn btn--cancel"
+            onClick={handleCancelStart}
+          >
+            Cancel
+          </button>
+        </div>
       </div>
     </div>
   );

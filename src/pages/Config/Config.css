@@ -12,6 +12,9 @@
   width: var(--space-full);
 }
 
+.config {
+  position: relative;
+}
 .config ul {
   list-style-type: none;
 }
@@ -24,7 +27,7 @@
 
 .config form,
 .preview {
-  width: 100%;
+  width: var(--space-full);
 }
 
 .preview {
@@ -54,12 +57,18 @@
   border-radius: var(--rounded-md);
   width: var(--space-three-quarters);
   filter: drop-shadow(
-    0 10px 15px hsla(var(--type-accent, 0, 0%), 50%, 10%, 0.5)
+    var(--shadow-lg) hsla(var(--type-accent), 10%, var(--glass-opacity-mid))
   );
-  -webkit-backdrop-filter: blur(var(--glassmorphism-blur));
-  backdrop-filter: blur(var(--glassmorphism-blur));
-  background-color: hsla(var(--type-accent), 60%, 0.6);
-  border: 1px solid hsla(var(--type-accent), 70%, 0.6);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+  background-color: hsla(
+    var(--type-accent),
+    var(--glass-lightness),
+    var(--glass-opacity-mid)
+  );
+  box-shadow: var(--shadow-md)
+    hsla(var(--type-accent), 10%, var(--glass-opacity-mid));
+  border: var(--glass-border);
 }
 
 .confirmation__not-ready {

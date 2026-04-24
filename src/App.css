@@ -91,9 +91,21 @@
   --z-debug: 9999;
 
   /* Glassmorphism */
-  --glassmorphism-blur: 10px;
+  --glass-blur: 10px;
+  --glass-lightness: 60%;
+  --glass-opacity-low: 0.2;
+  --glass-opacity-mid: 0.6;
+  --glass-opacity-high: 0.9;
+  --glass-border: 1px solid
+    hsla(var(--type-accent), 70%, var(--glassmorphism-a));
+
+  /* Shadow */
+  --shadow-sm: 1px 2px 4px;
+  --shadow-md: 2px 4px 8px;
+  --shadow-lg: 5px 10px 15px;
 }
 
+/* Pokemon types and their colors */
 .type-fire {
   --type-accent: var(--fire-hs);
 }
@@ -149,7 +161,11 @@
   --type-accent: var(--dark-hs);
 }
 [class^="type-"] {
-  background-color: hsla(var(--type-accent), 60%, 0.6);
+  background-color: hsla(
+    var(--type-accent),
+    var(--glassmorphism-l),
+    var(--glassmorphism-a)
+  );
 }
 [class*="type-flying"],
 [class*="type-steel"],
@@ -168,16 +184,21 @@
   color: var(--color-secondary);
 }
 
-/* When the parent has .is-critical, override the accent variable */
 .type-is-critical {
   --type-accent: 0, 100%;
   animation: pulse-red 2s infinite;
 }
+.type-label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px hsla(var(--type-accent), 100%, 0.8);
+  color: var(--color-secondary);
+}
 
 .status-msg,
 .hp-stat {
-  color: hsl(var(--type-accent), 50%, 50%);
-  transition: color 0.3s ease;
+  color: hsl(var(--type-accent), 50%);
+  transition: color var(--transition-normal);
 }
 
 @keyframes pulse-red {
