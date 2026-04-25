@@ -10,6 +10,7 @@ import Config from "./pages/Config/Config";
 import Arena from "./pages/Arena/Arena";
 import "./App.css";
 import "./Theme.css";
+import Confirm from "./pages/Confirm/Confirm";
 
 function App() {
   const router = createBrowserRouter(
@@ -17,6 +18,7 @@ function App() {
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
         <Route path="/config" element={<Config />} />
+        <Route path="/confirm" element={<Confirm />} />
         <Route path="/arena" element={<Arena />} />
       </Route>,
     ),

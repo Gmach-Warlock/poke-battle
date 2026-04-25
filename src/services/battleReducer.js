@@ -11,6 +11,7 @@ export function battleReducer(state, action) {
   switch (action.type) {
     case "setPlayer": {
       console.log(action.payload);
+
       return {
         ...state,
         player: action.payload,
