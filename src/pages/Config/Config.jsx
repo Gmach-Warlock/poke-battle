@@ -80,7 +80,7 @@ function Config() {
         <h2 className="preview__title">Preview</h2>
         {preview && (
           <div
-            className={`card preview__card type-${preview?.types[0].type.name}`}
+            className={`card--glass preview__card type-${preview?.types[0].type.name}`}
           >
             <h3>{preview?.name ?? "Undefined Name"}</h3>
             <p>{preview?.types[0].type.name}</p>

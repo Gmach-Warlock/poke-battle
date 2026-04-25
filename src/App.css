@@ -1,55 +1,4 @@
 :root {
-  /* Font Families */
-  --font-luckiest-guy: "Luckiest Guy", cursive;
-  --font-sour-gummy: "Sour Gummy", sans-serif;
-
-  /* Color Bases */
-  --white-hs: 0, 0%;
-  --primary-hs: 240, 100%;
-  --secondary-hs: 60, 100%;
-  --accent-hs: 134, 61%;
-  --fire-hs: 20, 100%;
-  --water-hs: 200, 100%;
-  --grass-hs: 110, 100%;
-  --electric-hs: 45, 100%;
-  --psychic-hs: 330, 100%;
-  --ice-hs: 180, 100%;
-  --dragon-hs: 260, 100%;
-  --ghost-hs: 270, 50%;
-  --poison-hs: 290, 80%;
-  --ground-hs: 35, 60%;
-  --rock-hs: 40, 30%;
-  --bug-hs: 75, 90%;
-  --normal-hs: 0, 0%;
-  --fighting-hs: 0, 75%;
-  --flying-hs: 230, 60%;
-  --steel-hs: 210, 20%;
-  --fairy-hs: 340, 80%;
-  --dark-hs: 0, 0%;
-
-  /* Colors */
-  --color-primary: hsl(240, 100%, 50%);
-  --color-secondary: hsl(60, 100%, 50%);
-  --color-accent: hsl(134, 61%, 50%);
-  --color-fire: hsl(20, 100%, 50%);
-  --color-water: hsl(200, 100%, 50%);
-  --color-grass: hsl(110, 100%, 50%);
-  --color-electric: hsl(45, 100%, 50%);
-  --color-psychic: hsl(330, 100%, 50%);
-  --color-ice: hsl(180, 100%, 50%);
-  --color-dragon: hsl(260, 100%, 50%);
-  --color-ghost: hsl(270, 50%, 50%);
-  --color-poison: hsl(290, 80%, 50%);
-  --color-ground: hsl(35, 60%, 50%);
-  --color-rock: hsl(40, 30%, 50%);
-  --color-bug: hsl(75, 90%, 50%);
-  --color-normal: hsl(0, 0%, 50%);
-  --color-fighting: hsl(230, 60%, 50%);
-  --color-flying: hsl(0, 75%, 50%);
-  --color-steel: hsl(210, 20%, 50%);
-  --color-fairy: hsl(340, 80%, 50%);
-  --color-dark: hsl(0, 0%, 25%);
-
   /* Font Sizes */
   --text-sm: 0.85rem;
   --text-md: 1.125rem;
@@ -58,6 +7,9 @@
   --text-2xl: 2rem;
   --text-3xl: 3rem;
   --text-4xl: 4rem;
+  --text-h1: var(--text-3xl);
+  --text-h2: var(--text-2xl);
+  --text-h3: var(--text-xl);
   --text-sign: 2.5rem;
 
   /* Spacing Scale */
@@ -82,7 +34,13 @@
   --rounded-md: 0.5rem;
   --rounded-lg: 1rem;
 
-  /* Positioning */
+  /* Styling */
+  --clip-text: text;
+  --filter-brightness: 1.1;
+  --hover-scale: 1.05;
+  --hover-cursor: pointer;
+
+  /* Layering */
   --z-below: -10;
   --z-base: 0;
   --z-middleground: 100;
@@ -97,118 +55,262 @@
   --glass-opacity-mid: 0.6;
   --glass-opacity-high: 0.9;
   --glass-border: 1px solid
-    hsla(var(--type-accent), 70%, var(--glassmorphism-a));
+    hsla(
+      var(--type-accent, var(--primary-hs)),
+      var(--lightness-glass),
+      var(--glass-opacity-mid)
+    );
+
+  /* Lightness */
+  --lightness-high: 80%;
+  --lightness-glass: 70%;
+  --lightness-base: 50%;
+  --lightness-low: 30%;
+  --lightness-shadow: 10%;
 
   /* Shadow */
-  --shadow-sm: 1px 2px 4px;
-  --shadow-md: 2px 4px 8px;
-  --shadow-lg: 5px 10px 15px;
+  --shadow-sm-narrow: 1px 2px 4px;
+  --shadow-md-narrow: 2px 4px 8px;
+  --shadow-lg-narrow: 5px 10px 15px;
+  --shadow-sm: 2px 2px 4px;
+  --shadow-md: 4px 4px 8px;
+  --shadow-lg: 5px 5px 10px;
+  --shadow-xl: 10px 10px 15px;
+
+  /* Screen Sizes (Breakpoints)
+     Reference for Media Queries: 1em = 16px 
+  */
+  --screen-xs: 30em; /* 480px  | Mobile Landscape / Large Phones */
+  --screen-sm: 40em; /* 640px  | Phablets / Small Tablets */
+  --screen-md: 48em; /* 768px  | Tablets (Portrait) */
+  --screen-lg: 64em; /* 1024px | Laptops / Desktop / Tablet (Landscape) */
+  --screen-xl: 75em; /* 1200px | Standard Desktop Max */
+  --screen-2xl: 96em; /* 1536px | Ultra-wide / 2K Monitors */
 }
 
-/* Pokemon types and their colors */
-.type-fire {
-  --type-accent: var(--fire-hs);
+/* Utility Classes */
+/* Rows and Columns */
+.column--between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
-.type-water {
-  --type-accent: var(--water-hs);
+.column--centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.type-grass {
-  --type-accent: var(--grass-hs);
+.row--between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.type-electric {
-  --type-accent: var(--electric-hs);
+.row--centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.type-psychic {
-  --type-accent: var(--psychic-hs);
+
+/* Wrappers */
+.wrapper--xs {
+  flex-wrap: wrap;
+  padding: var(--space-xs);
+  margin: var(--space-xs);
 }
-.type-ice {
-  --type-accent: var(--ice-hs);
+.wrapper--sm {
+  flex-wrap: wrap;
+  padding: var(--space-sm);
+  margin: var(--space-sm);
 }
-.type-dragon {
-  --type-accent: var(--dragon-hs);
+.wrapper--md {
+  flex-wrap: wrap;
+  padding: var(--space-md);
+  margin: var(--space-md);
 }
-.type-ghost {
-  --type-accent: var(--ghost-hs);
+.wrapper--lg {
+  flex-wrap: wrap;
+  padding: var(--space-lg);
+  margin: var(--space-lg);
 }
-.type-poison {
-  --type-accent: var(--poison-hs);
+
+/* Containers */
+.container {
+  width: var(--space-full);
+  max-width: var(--screen-xl);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
 }
-.type-ground {
-  --type-accent: var(--ground-hs);
+.container--tight {
+  max-width: 800px;
+  margin-inline: auto;
 }
-.type-rock {
-  --type-accent: var(--rock-hs);
-}
-.type-bug {
-  --type-accent: var(--bug-hs);
-}
-.type-normal {
-  --type-accent: var(--normal-hs);
-}
-.type-fighting {
-  --type-accent: var(--fighting-hs);
-}
-.type-flying {
-  --type-accent: var(--flying-hs);
-}
-.type-steel {
-  --type-accent: var(--steel-hs);
-}
-.type-fairy {
-  --type-accent: var(--fairy-hs);
-}
-.type-dark {
-  --type-accent: var(--dark-hs);
-}
-[class^="type-"] {
+
+/* Cards */
+.card--glass {
+  padding-inline: var(--space-xs);
+  border-radius: var(--rounded-md);
+  width: var(--space-three-quarters);
+  filter: drop-shadow(
+    var(--shadow-lg-narrow)
+      hsla(
+        var(--type-accent),
+        var(--lightness-shadow),
+        var(--glass-opacity-mid)
+      )
+  );
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
   background-color: hsla(
     var(--type-accent),
-    var(--glassmorphism-l),
-    var(--glassmorphism-a)
+    var(--glass-lightness),
+    var(--glass-opacity-mid)
   );
-}
-[class*="type-flying"],
-[class*="type-steel"],
-[class*="type-dragon"],
-[class*="type-ghost"],
-[class*="type-poison"],
-[class*="type-water"],
-[class*="type-psychic"],
-[class*="type-rock"],
-[class*="type-fire"],
-[class*="type-dark"],
-[class*="type-fighting"],
-[class*="type-normal"],
-[class*="type-ground"],
-[class*="type-fairy"] {
-  color: var(--color-secondary);
+  box-shadow: var(--shadow-md-narrow)
+    hsla(var(--type-accent), var(--lightness-shadow), var(--glass-opacity-mid));
+  border: var(--glass-border);
 }
 
-.type-is-critical {
-  --type-accent: 0, 100%;
-  animation: pulse-red 2s infinite;
-}
-.type-label {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 8px hsla(var(--type-accent), 100%, 0.8);
-  color: var(--color-secondary);
-}
-
-.status-msg,
-.hp-stat {
-  color: hsl(var(--type-accent), 50%);
-  transition: color var(--transition-normal);
+/* Headings */
+.heading--clipped {
+  text-shadow: 5px 5px 10px black;
+  background: linear-gradient(
+    to bottom,
+    hsla(var(--secondary-hs), 80%, 0.9),
+    hsla(var(--secondary-hs), 30%, 0.9)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: hsla(var(--secondary-hs), 50%, 0.7);
 }
 
-@keyframes pulse-red {
-  0% {
-    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0);
+/* Overlays */
+.overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color-primary);
+  z-index: var(--z-overlay);
+}
+
+/* Tailwind influenced */
+/* Display */
+.flex {
+  display: flex;
+}
+.flex-1 {
+  flex: 1;
+}
+.shrink-0 {
+  flex-shrink: 0;
+}
+.self-start {
+  align-self: flex-start;
+}
+.self-end {
+  align-self: flex-end;
+}
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-md);
+}
+.span-full {
+  grid-column: span 12;
+}
+.span-6 {
+  grid-column: span 6;
+}
+.span-4 {
+  grid-column: span 4;
+}
+.span-3 {
+  grid-column: span 3;
+}
+
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
+
+/* Padding and Margin */
+.p-1 {
+  padding: var(--space-xs);
+}
+.m-auto {
+  margin-inline: auto;
+}
+.p-inline-md {
+  padding-inline: var(--space-md);
+}
+.m-block-sm {
+  margin-block: var(--space-sm);
+}
+.mx-auto {
+  margin-inline: auto;
+}
+.my-auto {
+  margin-block: auto;
+}
+
+/* Space */
+.w-full {
+  width: var(--space-full);
+}
+.h-full {
+  height: var(--space-full);
+}
+
+.stack-sm > * + * {
+  margin-block-start: var(--space-sm);
+}
+.stack-md > * + * {
+  margin-block-start: var(--space-md);
+}
+
+/* GoTo Animations */
+.anim-fade-in {
+  animation: fadeIn var(--transition-normal) forwards;
+}
+
+.anim-slide-up {
+  animation: slideUp var(--transition-normal) var(--transition-slow) forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  50% {
-    box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.5);
+  to {
+    opacity: 1;
   }
-  100% {
-    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
   }
 }

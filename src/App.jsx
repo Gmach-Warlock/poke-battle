@@ -4,11 +4,12 @@ import {
   Route,
   RouterProvider,
 } from "react-router";
-import "./App.css";
 import Root from "./Root";
 import Home from "./pages/Home/Home";
 import Config from "./pages/Config/Config";
 import Arena from "./pages/Arena/Arena";
+import "./App.css";
+import "./Theme.css";
 
 function App() {
   const router = createBrowserRouter(

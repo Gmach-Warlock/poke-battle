@@ -1,0 +1,208 @@
+:root {
+  /* Font Families */
+  --font-main: "Luckiest Guy", cursive;
+  --font-second: "Sour Gummy", sans-serif;
+  --font-button: Arial, Helvetica, sans-serif;
+  --font-form: Arial, Helvetica, sans-serif;
+  --font-link: 
+
+  /* Color Bases */ --white-hs: 0, 0%;
+  --primary-hs: 240, 100%;
+  --secondary-hs: 60, 100%;
+  --accent-hs: 134, 61%;
+  --fire-hs: 20, 100%;
+  --water-hs: 200, 100%;
+  --grass-hs: 110, 100%;
+  --electric-hs: 45, 100%;
+  --psychic-hs: 330, 100%;
+  --ice-hs: 180, 100%;
+  --dragon-hs: 260, 100%;
+  --ghost-hs: 270, 50%;
+  --poison-hs: 290, 80%;
+  --ground-hs: 35, 60%;
+  --rock-hs: 40, 30%;
+  --bug-hs: 75, 90%;
+  --normal-hs: 0, 0%;
+  --fighting-hs: 0, 75%;
+  --flying-hs: 230, 60%;
+  --steel-hs: 210, 20%;
+  --fairy-hs: 340, 80%;
+  --dark-hs: 0, 0%;
+
+  /* Colors */
+  --color-primary: hsl(240, 100%, 50%);
+  --color-secondary: hsl(60, 100%, 50%);
+  --color-accent: hsl(134, 61%, 50%);
+  --color-fire: hsl(20, 100%, 50%);
+  --color-water: hsl(200, 100%, 50%);
+  --color-grass: hsl(110, 100%, 50%);
+  --color-electric: hsl(45, 100%, 50%);
+  --color-psychic: hsl(330, 100%, 50%);
+  --color-ice: hsl(180, 100%, 50%);
+  --color-dragon: hsl(260, 100%, 50%);
+  --color-ghost: hsl(270, 50%, 50%);
+  --color-poison: hsl(290, 80%, 50%);
+  --color-ground: hsl(35, 60%, 50%);
+  --color-rock: hsl(40, 30%, 50%);
+  --color-bug: hsl(75, 90%, 50%);
+  --color-normal: hsl(0, 0%, 50%);
+  --color-fighting: hsl(0, 75%, 50%);
+  --color-flying: hsl(230, 60%, 50%);
+  --color-steel: hsl(210, 20%, 50%);
+  --color-fairy: hsl(340, 80%, 50%);
+  --color-dark: hsl(0, 0%, 25%);
+}
+
+/* Pokemon types and their colors */
+.type-fire {
+  --type-accent: var(--fire-hs);
+}
+.type-water {
+  --type-accent: var(--water-hs);
+}
+.type-grass {
+  --type-accent: var(--grass-hs);
+}
+.type-electric {
+  --type-accent: var(--electric-hs);
+}
+.type-psychic {
+  --type-accent: var(--psychic-hs);
+}
+.type-ice {
+  --type-accent: var(--ice-hs);
+}
+.type-dragon {
+  --type-accent: var(--dragon-hs);
+}
+.type-ghost {
+  --type-accent: var(--ghost-hs);
+}
+.type-poison {
+  --type-accent: var(--poison-hs);
+}
+.type-ground {
+  --type-accent: var(--ground-hs);
+}
+.type-rock {
+  --type-accent: var(--rock-hs);
+}
+.type-bug {
+  --type-accent: var(--bug-hs);
+}
+.type-normal {
+  --type-accent: var(--normal-hs);
+}
+.type-fighting {
+  --type-accent: var(--fighting-hs);
+}
+.type-flying {
+  --type-accent: var(--flying-hs);
+}
+.type-steel {
+  --type-accent: var(--steel-hs);
+}
+.type-fairy {
+  --type-accent: var(--fairy-hs);
+}
+.type-dark {
+  --type-accent: var(--dark-hs);
+}
+[class^="type-"] {
+  background-color: hsla(
+    var(--type-accent),
+    var(--lightness-glass),
+    var(--glass-opacity-mid)
+  );
+}
+[class*="type-flying"],
+[class*="type-steel"],
+[class*="type-dragon"],
+[class*="type-ghost"],
+[class*="type-poison"],
+[class*="type-water"],
+[class*="type-psychic"],
+[class*="type-rock"],
+[class*="type-fire"],
+[class*="type-dark"],
+[class*="type-fighting"],
+[class*="type-normal"],
+[class*="type-ground"],
+[class*="type-fairy"] {
+  color: var(--color-secondary);
+}
+
+.type-is-critical {
+  --type-accent: 0, 100%;
+  animation: pulse-red 2s infinite;
+}
+.type-label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px hsla(var(--type-accent), 100%, 0.8);
+  color: var(--color-secondary);
+}
+
+.status-msg,
+.hp-stat {
+  color: hsl(var(--type-accent), 50%);
+  transition: color var(--transition-normal);
+}
+
+.battle-layout {
+  height: 80vh; /* Give the grid some height to work with */
+}
+
+.player-slot {
+  grid-column: 2 / 6;
+  grid-row: 7 / 11;
+  align-self: end;
+}
+
+.opponent-slot {
+  grid-column: 7 / 11;
+  grid-row: 2 / 6;
+  align-self: start;
+}
+
+.vs-action-zone {
+  grid-column: 5 / 9;
+  grid-row: 5 / 8;
+  z-index: var(--z-foreground);
+}
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0);
+  }
+  50% {
+    box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+  100% {
+    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0);
+  }
+}
+
+.anim-shake {
+  animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

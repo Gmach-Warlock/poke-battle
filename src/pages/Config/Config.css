@@ -52,25 +52,6 @@
   margin-inline: var(--space-sm);
 }
 
-.card {
-  padding-inline: var(--space-xs);
-  border-radius: var(--rounded-md);
-  width: var(--space-three-quarters);
-  filter: drop-shadow(
-    var(--shadow-lg) hsla(var(--type-accent), 10%, var(--glass-opacity-mid))
-  );
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  backdrop-filter: blur(var(--glass-blur));
-  background-color: hsla(
-    var(--type-accent),
-    var(--glass-lightness),
-    var(--glass-opacity-mid)
-  );
-  box-shadow: var(--shadow-md)
-    hsla(var(--type-accent), 10%, var(--glass-opacity-mid));
-  border: var(--glass-border);
-}
-
 .confirmation__not-ready {
   display: none;
 }

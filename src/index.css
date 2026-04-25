@@ -8,26 +8,22 @@
 body {
   background-color: var(--color-primary);
   color: var(--color-secondary);
-  font-family: var(--font-luckiest-guy);
+  font-family: var(--font-main);
   text-align: center;
 }
 
 h1 {
-  font-size: var(--text-3xl);
-  text-shadow: 5px 5px 10px black;
-  background: linear-gradient(
-    to bottom,
-    hsla(var(--secondary-hs), 80%, 0.9),
-    hsla(var(--secondary-hs), 30%, 0.9)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: hsla(var(--secondary-hs), 50%, 0.7);
+  font-size: var(--text-h1);
+}
+h2 {
+  font-size: var(--text-h2);
+}
+h3 {
+  font-size: var(--text-h3);
 }
 
 h2,
 h3 {
-  font-size: var(--text-lg);
   padding: var(--space-md);
 }
 
@@ -38,24 +34,28 @@ input {
 }
 
 button {
-  background-color: hsla(var(--secondary-hs), 50%, 0.9);
+  background-color: hsla(
+    var(--secondary-hs),
+    var(--lightness-base),
+    var(--glass-opacity-high)
+  );
+  width: max-content;
+  margin-inline: auto;
   color: var(--color-primary);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-button);
   border-radius: var(--rounded-sm);
+  padding-inline: var(--space-md);
+  padding-block: var(--space-xs);
+  transition: all var(--transition-fast);
+  cursor: var(--hover-cursor);
 }
 
-.overlay {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--color-primary);
-  z-index: var(--z-overlay);
+button:hover {
+  background-color: var(--color-accent);
+  filter: var(--filter-brightness);
+  transform: var(--hover-scale);
 }
 
-.hidden {
-  display: none;
-}
-
-.visible {
-  display: block;
+li {
+  list-style-type: none;
 }
