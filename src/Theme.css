@@ -4,9 +4,10 @@
   --font-second: "Sour Gummy", sans-serif;
   --font-button: Arial, Helvetica, sans-serif;
   --font-form: Arial, Helvetica, sans-serif;
-  --font-link: 
+  --font-link: Arial, Helvetica, sans-serif;
 
-  /* Color Bases */ --white-hs: 0, 0%;
+  /* Color Bases */
+  --white-hs: 0, 0%;
   --primary-hs: 240, 100%;
   --secondary-hs: 60, 100%;
   --accent-hs: 134, 61%;
@@ -51,6 +52,9 @@
   --color-steel: hsl(210, 20%, 50%);
   --color-fairy: hsl(340, 80%, 50%);
   --color-dark: hsl(0, 0%, 25%);
+
+  --space-battle-height: 80vh;
+  --space-battle-width: 100%;
 }
 
 /* Pokemon types and their colors */
@@ -115,20 +119,21 @@
     var(--glass-opacity-mid)
   );
 }
-[class*="type-flying"],
-[class*="type-steel"],
-[class*="type-dragon"],
-[class*="type-ghost"],
-[class*="type-poison"],
-[class*="type-water"],
-[class*="type-psychic"],
-[class*="type-rock"],
-[class*="type-fire"],
-[class*="type-dark"],
-[class*="type-fighting"],
-[class*="type-normal"],
-[class*="type-ground"],
-[class*="type-fairy"] {
+
+.type-flying,
+.type-steel,
+.type-dragon,
+.type-ghost,
+.type-poison,
+.type-water,
+.type-psychic,
+.type-rock,
+.type-fire,
+.type-dark,
+.type-fighting,
+.type-normal,
+.type-ground,
+.type-fairy {
   color: var(--color-secondary);
 }
 
@@ -139,7 +144,7 @@
 .type-label {
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 0 0 8px hsla(var(--type-accent), 100%, 0.8);
+  text-shadow: var(--shadow-text) hsla(var(--type-accent), 100%, 0.8);
   color: var(--color-secondary);
 }
 
@@ -149,8 +154,9 @@
   transition: color var(--transition-normal);
 }
 
-.battle-layout {
-  height: 80vh; /* Give the grid some height to work with */
+.battle {
+  height: var(--space-battle-height);
+  width: var(--space-battle-width);
 }
 
 .player-slot {
@@ -171,16 +177,29 @@
   z-index: var(--z-foreground);
 }
 
-@keyframes pulse-red {
-  0% {
-    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0);
-  }
-  50% {
-    box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.5);
-  }
-  100% {
-    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0);
-  }
+/* Cards */
+.card--glass {
+  padding-inline: var(--space-xs);
+  border-radius: var(--rounded-md);
+  width: var(--space-forty);
+  filter: drop-shadow(
+    var(--shadow-xl-narrow)
+      hsla(
+        var(--type-accent),
+        var(--lightness-shadow),
+        var(--glass-opacity-clip)
+      )
+  );
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+  background-color: hsla(
+    var(--type-accent),
+    var(--glass-lightness),
+    var(--glass-opacity-mid)
+  );
+  box-shadow: var(--shadow-md-narrow)
+    hsla(var(--type-accent), var(--lightness-shadow), var(--glass-opacity-mid));
+  border: var(--glass-border);
 }
 
 .anim-shake {
@@ -204,5 +223,29 @@
   40%,
   60% {
     transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes earthquake {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-8px, 4px);
+  }
+  50% {
+    transform: translate(8px, -4px);
+  }
+  75% {
+    transform: translate(-4px, 2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .shake-trigger {
+    animation: earthquake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   }
 }

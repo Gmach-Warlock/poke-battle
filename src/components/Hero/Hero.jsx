@@ -10,7 +10,7 @@ function Hero() {
   return (
     <div className="hero">
       <h1 className="heading--clipped">Poke Battle</h1>
-      <p>Battle one on one!</p>
+      <p className="heading--clipped">Battle one on one!</p>
       <button type="button" onClick={handleStartConfig}>
         Battle
       </button>

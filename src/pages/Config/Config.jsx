@@ -44,7 +44,7 @@ function Config() {
   return (
     <div className="config">
       <div className="prep">
-        <h2>Prepare for battle!</h2>
+        <h2 className="heading--blocked">Prepare for battle!</h2>
         <div className="prep__options">
           <form className="search" onSubmit={handleSearch}>
             <input
@@ -68,15 +68,15 @@ function Config() {
       </div>
 
       <div className="preview">
-        <h2 className="preview__title">Preview</h2>
+        <h2 className="preview__title heading--blocked">Preview</h2>
         {preview && (
           <div
             className={`card--glass preview__card type-${preview?.types[0].type.name}`}
           >
             <h3>{preview?.name ?? "Undefined Name"}</h3>
             <p>{`Type: ${preview?.types[0].type.name}`}</p>
-            <p>{`Height: ${preview?.height} feet`}</p>
-            <p>{`Weight: ${preview?.weight} lbs`}</p>
+            <p>{`Height: ${(preview?.height * 0.328084).toFixed(0)} feet`}</p>
+            <p>{`Weight: ${(preview?.weight * 0.220462).toFixed(0)} lbs`}</p>
             <img
               src={preview?.sprites.front_default ?? ""}
               alt={preview?.name ?? "Undefined Img"}
@@ -103,7 +103,7 @@ function Config() {
       </div>
 
       <div className="prep__contestants">
-        <h3>Match</h3>
+        <h3 className="h">Match</h3>
         <span>{battleState.player?.name ?? ""}</span>
         <span> vs </span>
         <span>{battleState.opponent?.name ?? ""}</span>

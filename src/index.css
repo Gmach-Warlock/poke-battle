@@ -34,15 +34,20 @@ input {
 }
 
 button {
-  background-color: hsla(
+  /*   background-color: hsla(
     var(--secondary-hs),
     var(--lightness-base),
     var(--glass-opacity-high)
-  );
+  ); */
+  background-image: var(--gradient-linear-stacked-pill);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+  transition: all var(--transition-fast);
   width: max-content;
   margin-inline: auto;
   color: var(--color-primary);
   font-family: var(--font-button);
+  font-size: var(--text-button);
   border-radius: var(--rounded-sm);
   padding-inline: var(--space-md);
   padding-block: var(--space-xs);
@@ -56,6 +61,66 @@ button:hover {
   transform: var(--hover-scale);
 }
 
+button:active {
+  border: var(--glass-border);
+}
+
+input[type="text"] {
+  background-color: hsl(var(--primary-hs), 95%); /* Slightly off-white */
+  border: 2px solid hsl(var(--primary-hs), var(--lightness-shadow));
+  box-shadow: var(--shadow-inset-field);
+
+  padding-inline: var(--space-sm);
+  padding-block: var(--space-xs);
+  border-radius: var(--rounded-sm);
+
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+  transition: border-color var(--transition-fast);
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: hsl(var(--secondary-hs), 50%); /* Glows yellow when active */
+  background-color: #fff;
+}
+
 li {
   list-style-type: none;
 }
+
+abbr {
+  cursor: help;
+  text-decoration: underline dotted;
+}
+
+/* 10. Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-primary);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+  cursor: grab;
+}
+
+/* Memorize these four commands and you'll never have to right-click a folder again:
+
+mkdir -p src/components src/hooks src/store: The -p flag is "clutch"—it creates the parent and all subfolders in one shot.
+
+touch src/index.css src/main.tsx: This creates empty files instantly. No "Right Click -> New File -> Type Name."
+
+mv: Use this to move your template files. mv ~/Downloads/my-template/src/* ./src/
+
+code .: This is the "magic word." Once you've finished your terminal surgery, type this to open the current folder in VS Code. */
+
+/* alias vite-flash='rm -rf src public && mkdir src public && cp -r ~/path/to/template/src/* ./src/' */
