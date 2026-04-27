@@ -95,9 +95,10 @@
   --shadow-inset-field:
     inset 2px 2px 5px hsla(0, 0%, 0%, 0.2),
     inset -1px -1px 2px hsla(0, 0%, 100%, 0.1);
-
   --box-shadow-button: inset var(--shadow-button)
-    hsla(var(--secondary-hs), 0%, var(--glass-opacity-low)); /* Gradients */
+    hsla(var(--secondary-hs), 0%, var(--glass-opacity-low));
+
+  /* Gradients */
   --gradient-linear-basic: linear-gradient(
     to bottom,
     hsl(var(--secondary-hs), 75%),
@@ -120,6 +121,13 @@
       to bottom,
       hsla(var(--secondary-hs), 75%, 0.6) 50%,
       hsla(var(--secondary-hs), 35%, 0.6) 50%
+    ),
+    var(--gradient-linear-basic);
+  --gradient-linear-stacked-pill-hover:
+    linear-gradient(
+      to bottom,
+      hsla(var(--accent-hs), 75%, 0.6) 50%,
+      hsla(var(--accent-hs), 35%, 0.6) 50%
     ),
     var(--gradient-linear-basic);
 
@@ -254,9 +262,15 @@
 .self-end {
   align-self: flex-end;
 }
-.grid-12 {
+.grid-12-flat {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-md);
+}
+.grid-12-full {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
   gap: var(--space-md);
 }
 .span-full {

@@ -56,7 +56,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--color-accent);
+  background-image: var(--gradient-linear-stacked-pill-hover);
   filter: var(--filter-brightness);
   transform: var(--hover-scale);
 }

@@ -1,0 +1,19 @@
+.battle__title {
+  grid-column: 1 / -1;
+}
+
+.battle__ui {
+  grid-column: 5 / 8;
+}
+
+.battle__opponent {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.battle__player-stats {
+  grid-column: 1 / 4;
+  grid-row: 2 / span 4;
+  border: 1px solid hsl(var(--secondary-hs), 50%);
+  border-radius: var(--rounded-md);
+}
