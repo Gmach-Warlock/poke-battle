@@ -17,6 +17,10 @@ export function battleReducer(state, action) {
         height: action.payload.height,
         hp: 100,
         id: action.payload.id,
+        items: [
+          { name: "potion", id: crypto.randomUUID() },
+          { name: "ether", id: crypto.randomUUID() },
+        ],
         moves: action.payload.moves,
         mp: 50,
         name: action.payload.name,

@@ -3,17 +3,58 @@
 }
 
 .battle__ui {
-  grid-column: 5 / 8;
+  grid-column: 5 / 9;
+  place-items: center;
 }
 
 .battle__opponent {
-  grid-column: 1 / -1;
+  grid-column: 5 / 9;
   justify-self: center;
 }
 
 .battle__player-stats {
   grid-column: 1 / 4;
-  grid-row: 2 / span 4;
+  grid-row: 2;
   border: 1px solid hsl(var(--secondary-hs), 50%);
   border-radius: var(--rounded-md);
+  padding-bottom: var(--space-sm);
+}
+
+.battle__message {
+  grid-column: 1 / -1;
+}
+
+.menu-button:hover::before,
+.menu-button:focus::before {
+  content: "▶";
+  position: absolute;
+  left: -20px;
+  color: hsl(52, 100%, 50%); /* Pokémon Yellow */
+}
+
+.menu-btn {
+  position: relative;
+  padding-left: 25px; /* Leave room for the cursor */
+  transition: all 0.2s ease-in-out;
+}
+
+/* The "Cursor" */
+.menu-btn.active::before {
+  content: "▶"; /* Or use a custom SVG/Image */
+  position: absolute;
+  left: 5px;
+  animation: blink 0.8s infinite;
+  color: var(--type-accent); /* Using your theme variable */
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(3px);
+  }
 }

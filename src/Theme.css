@@ -32,7 +32,7 @@
 
   /* Colors */
   --color-primary: hsl(240, 100%, 50%);
-  --color-secondary: hsl(60, 100%, 50%);
+  --color-secondary: hsl(52, 100%, 50%);
   --color-accent: hsl(134, 61%, 50%);
   --color-fire: hsl(20, 100%, 50%);
   --color-water: hsl(200, 100%, 50%);
@@ -181,7 +181,6 @@
 .card--glass {
   padding-inline: var(--space-xs);
   border-radius: var(--rounded-md);
-  width: var(--space-forty);
   filter: drop-shadow(
     var(--shadow-xl-narrow)
       hsla(

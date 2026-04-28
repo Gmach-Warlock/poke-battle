@@ -8,7 +8,7 @@ function Arena() {
     <div className="arena grid-12-flat">
       <h2 className="battle__title">Battle Time!</h2>
       <div className="battle__ui">
-        <ul>
+        <ul className="card--light">
           <li>Attack</li>
           <li>Moves</li>
           <li>Ability</li>
@@ -26,10 +26,37 @@ function Arena() {
         <p>{`${battleState?.opponent?.hp} hp`}</p>
         <p>{`${battleState?.opponent?.mp} mp`}</p>
       </div>
-      <div className="battle__player-stats">
+      <div
+        className={`battle__player-stats card--glass type-${battleState?.player?.types[0].type.name}`}
+      >
         <h3>{battleState?.player?.name}</h3>
-        <p>{battleState?.player?.hp}</p>
-        <p>{battleState?.player?.mp}</p>
+        <div className="row--between">
+          <p>Type: </p>
+          <p>{battleState?.player?.types[0].type.name}</p>
+        </div>
+        <div className="row--between">
+          <p>HP: </p>
+          <p>{battleState?.player?.hp}</p>
+        </div>
+        <div className="row--between">
+          <p>MP: </p>
+          <p>{battleState?.player?.mp}</p>
+        </div>
+        <div className="row--between">
+          <p>Status: </p>
+          <p>{battleState?.player?.status}</p>
+        </div>
+        <div className="row--between-start">
+          <p>Items: </p>
+          <ul>
+            {battleState?.player?.items.map((item) => (
+              <li>{item.name}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="battle__message container column--centered card--light">
+        <p>What would like to do?</p>
       </div>
     </div>
   );

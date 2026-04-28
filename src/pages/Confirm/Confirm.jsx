@@ -17,6 +17,22 @@ function Confirm() {
     <div className={`confirm overlay column--centered gap-3`}>
       <h3 className="heading--blocked">Are you sure this ok?</h3>
 
+      <div className="confirm__actions action">
+        <button
+          type="button"
+          className="btn btn--confirm"
+          onClick={handleConfirmStart}
+        >
+          Ok
+        </button>
+        <button
+          type="button"
+          className="btn btn--cancel"
+          onClick={handleCancelStart}
+        >
+          Cancel
+        </button>
+      </div>
       <div className="container row--centered">
         <div
           className={`card--glass preview__card type-${battleState?.player?.types[0].type.name}`}
@@ -62,23 +78,6 @@ function Confirm() {
           <p>Ability:</p>
           <p>{battleState?.opponent?.abilities[0].ability.name}</p>
         </div>
-      </div>
-
-      <div className="confirm__actions action">
-        <button
-          type="button"
-          className="btn btn--confirm"
-          onClick={handleConfirmStart}
-        >
-          Ok
-        </button>
-        <button
-          type="button"
-          className="btn btn--cancel"
-          onClick={handleCancelStart}
-        >
-          Cancel
-        </button>
       </div>
     </div>
   );

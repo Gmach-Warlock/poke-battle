@@ -71,11 +71,15 @@
     );
 
   /* Lightness */
+  --lightness-white: 100%;
   --lightness-high: 80%;
+  --lightness-gradient-top: 75%;
+  --lightness-gradient-bottom: 35%;
   --lightness-glass: 70%;
   --lightness-base: 50%;
   --lightness-low: 30%;
   --lightness-shadow: 10%;
+  --lightness-black: 0%;
 
   /* Shadow */
   --shadow-sm: 2px 2px 4px;
@@ -90,24 +94,26 @@
   --shadow-md-narrow: 2px 4px 8px;
   --shadow-lg-narrow: 3px 5px 10px;
   --shadow-xl-narrow: 5px 10px 15px;
+  --shadow-inset: -1px -1px 2px;
   --shadow-text: 0px 0px 8px;
   --shadow-button: 0px 4px 8px;
   --shadow-inset-field:
-    inset 2px 2px 5px hsla(0, 0%, 0%, 0.2),
-    inset -1px -1px 2px hsla(0, 0%, 100%, 0.1);
+    inset var(--shadow-sm)
+      hsla(0, 0%, var(--lightness-black), var(--glass-opacity-low)),
+    inset var(--shadow-inset) hsla(0, 0%, var(--lightness-white), 0.1);
   --box-shadow-button: inset var(--shadow-button)
-    hsla(var(--secondary-hs), 0%, var(--glass-opacity-low));
+    hsla(var(--secondary-hs), var(--lightness-black), var(--glass-opacity-low));
 
   /* Gradients */
   --gradient-linear-basic: linear-gradient(
     to bottom,
-    hsl(var(--secondary-hs), 75%),
-    hsl(var(--secondary-hs), 35%)
+    hsl(var(--secondary-hs), var(--lightness-gradient-top)),
+    hsl(var(--secondary-hs), var(--lightness-gradient-bottom))
   );
   --gradient-linear-line50: linear-gradient(
     to bottom,
-    hsl(var(--secondary-hs), 75%) 50%,
-    hsl(var(--secondary-hs), 35%) 50%
+    hsl(var(--secondary-hs), var(--lightness-gradient-top)) 50%,
+    hsl(var(--secondary-hs), var(--lightness-gradient-bottom)) 50%
   );
   --gradient-text-pro: linear-gradient(
     to bottom,
@@ -119,15 +125,35 @@
   --gradient-linear-stacked-pill:
     linear-gradient(
       to bottom,
-      hsla(var(--secondary-hs), 75%, 0.6) 50%,
-      hsla(var(--secondary-hs), 35%, 0.6) 50%
+      hsla(
+          var(--secondary-hs),
+          var(--lightness-gradient-top),
+          var(--glass-opacity-mid)
+        )
+        50%,
+      hsla(
+          var(--secondary-hs),
+          var(--lightness-gradient-bottom),
+          var(--glass-opacity-mid)
+        )
+        50%
     ),
     var(--gradient-linear-basic);
   --gradient-linear-stacked-pill-hover:
     linear-gradient(
       to bottom,
-      hsla(var(--accent-hs), 75%, 0.6) 50%,
-      hsla(var(--accent-hs), 35%, 0.6) 50%
+      hsla(
+          var(--accent-hs),
+          var(--lightness-gradient-top),
+          var(--glass-opacity-mid)
+        )
+        50%,
+      hsla(
+          var(--accent-hs),
+          var(--lightness-gradient-bottom),
+          var(--glass-opacity-mid)
+        )
+        50%
     ),
     var(--gradient-linear-basic);
 
@@ -141,6 +167,19 @@
 }
 
 /* Utility Classes */
+/* Cards */
+.card--light {
+  background-color: hsl(var(--secondary-hs), 80%);
+  color: var(--color-primary);
+  min-height: 4rem;
+  padding-inline: var(--space-xs);
+  border-radius: var(--rounded-md);
+  width: 80%;
+  box-shadow: var(--shadow-lg-narrow)
+    hsla(var(--type-accent), var(--lightness-shadow), var(--glass-opacity-high));
+  border: var(--glass-border);
+}
+
 /* Rows and Columns */
 .column--between {
   display: flex;
@@ -152,6 +191,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.column--start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
 }
@@ -167,7 +213,12 @@
   text-align: center;
   gap: var(--space-xs);
 }
-
+.row--between-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: center;
+}
 /* Containers */
 .container {
   width: var(--space-full);

@@ -35,8 +35,10 @@ function Config() {
   };
 
   const handleStartBattle = () => {
-    if (battleState.player === null || battleState.opponent === null)
+    if (battleState.player === null || battleState.opponent === null) {
       alert("Please Make sure you have a player and opponent selected!");
+      return;
+    }
 
     navigate("/confirm");
   };
@@ -59,10 +61,12 @@ function Config() {
           </form>
 
           <div className="random">
-            <span>Find a new Pokemon</span>
-            <button type="button" onClick={handleFetchRandom}>
-              New
-            </button>
+            <span>
+              Find a new Pokemon{" "}
+              <button type="button" onClick={handleFetchRandom}>
+                New
+              </button>
+            </span>
           </div>
         </div>
       </div>
