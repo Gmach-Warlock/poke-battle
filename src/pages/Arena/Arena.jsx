@@ -1,12 +1,12 @@
 import { useOutletContext } from "react-router";
-import "./Arena.css";
+import "./Arena.scss";
 
 function Arena() {
   const { battleState } = useOutletContext();
 
   return (
     <div className="arena grid-12-flat">
-      <h2 className="battle__title">Battle Time!</h2>
+      <h2 className="battle__title heading--blocked">Battle Time!</h2>
       <div className="battle__ui">
         <ul className="card--light">
           <li>Attack</li>

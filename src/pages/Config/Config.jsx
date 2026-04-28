@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { fetchByName, fetchRandomPokemon } from "../../utils/fetches";
-import "./Config.css";
+import "./Config.scss";
 import { useNavigate, useOutletContext } from "react-router";
 
 function Config() {

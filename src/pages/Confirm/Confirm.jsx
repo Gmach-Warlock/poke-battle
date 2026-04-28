@@ -1,5 +1,5 @@
 import { useOutletContext, useNavigate } from "react-router";
-import "./Confirm.css";
+import "./Confirm.scss";
 
 function Confirm() {
   const { battleState } = useOutletContext();

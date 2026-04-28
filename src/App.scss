@@ -26,6 +26,7 @@
   --space-full-height: 100vh;
   --space-full-width: 100vw;
   --space-container-tight: 800px;
+  --space-img: 5rem;
 
   /* Standard Transitions */
   --transition-fast: 0.15s ease;
@@ -176,11 +177,15 @@
   border-radius: var(--rounded-md);
   width: 80%;
   box-shadow: var(--shadow-lg-narrow)
-    hsla(var(--type-accent), var(--lightness-shadow), var(--glass-opacity-high));
+    hsla(
+      var(--primary-hs, 0, 0%),
+      var(--lightness-shadow),
+      var(--glass-opacity-high)
+    );
   border: var(--glass-border);
 }
 
-/* Rows and Columns */
+/* Columns and Rows */
 .column--between {
   display: flex;
   flex-direction: column;
@@ -219,6 +224,7 @@
   align-items: flex-start;
   text-align: center;
 }
+
 /* Containers */
 .container {
   width: var(--space-full);
@@ -255,14 +261,63 @@
   paint-order: stroke fill;
 }
 
+/* Data Driven */
+[data-loading="true"] {
+  pointer-events: none;
+  opacity: 0.7;
+  cursor: wait;
+  position: relative;
+}
+
+[data-loading="true"]::after {
+  content: "";
+}
+
+/* Glow and Accent */
+.glow-accent {
+  text-shadow:
+    0 0 5px hsla(var(--accent-hs), var(--lightness-base), 0.8),
+    0 0 10px hsla(var(--accent-hs), var(--lightness-base), 0.5);
+}
+
+.border-glow {
+  box-shadow: 0 0 15px hsla(var(--primary-hs), var(--lightness-base), 0.3);
+  border: 1px solid hsla(var(--primary-hs), var(--lightness-high), 0.5);
+}
+
 /* Images */
-.-image.is-expanded:hover {
+.img {
+  display: block;
+  width: var(--space-img);
+  height: auto;
+}
+
+.img__is-expanded:hover {
   cursor: zoom-out;
 }
 
 /* Info */
 .-info__icon {
   cursor: var(--cursor-info);
+}
+
+/* Interactive Components */
+.interactive {
+  cursor: var(--cursor-action);
+  transition:
+    transform var(--transition-fast),
+    filter var(--transition-fast),
+    box-shadow var(--transition-fast);
+  -webkit-user-select: none;
+  user-select: none;
+}
+.interactive:hover {
+  transform: translateY(-2px) scale(var(--hover-scale));
+  filter: brightness(var(--filter-brightness));
+}
+.interactive:active {
+  transform: translateY(0) scale(0.98);
+  filter: brightness(0.9);
 }
 
 /* Overlays */
@@ -272,6 +327,43 @@
   width: 100vw;
   background-color: var(--color-primary);
   z-index: var(--z-overlay);
+}
+
+/* States */
+.active {
+  color: hsl(var(--accent-hs), var(--lightness-high));
+  border: 2px solid hsl(var(--accent-hs), var(--lightness-base));
+  transform: scale(var(--hover-scale));
+  filter: brightness(var(--filter-brightness));
+  text-shadow: var(--shadow-text) white;
+  transition: all var(--transition-fast);
+}
+.nav-link.active {
+  background: var(--gradient-linear-stacked-pill-hover);
+  color: white;
+  border-radius: var(--rounded-md);
+  box-shadow: var(--shadow-sm)
+    hsla(var(--accent-hs), var(--lightness-shadow), 0.5);
+}
+.disabled,
+[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(1);
+  cursor: var(--cursor-disabled);
+}
+.error {
+  border-color: hsl(0, 100%, 50%);
+  animation: pulse-red 2s infinite;
+}
+.focus-visible {
+  outline: 3px solid hsl(var(--accent-hs), var(--lightness-base));
+  outline-offset: 2px;
+}
+.pending {
+  cursor: wait;
+  opacity: 0.7;
+  /* Re-using your pulse animation logic */
 }
 
 /* Wrappers */
@@ -312,6 +404,11 @@
 }
 .self-end {
   align-self: flex-end;
+}
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: var(--space-md);
 }
 .grid-12-flat {
   display: grid;
@@ -419,7 +516,6 @@
 .m-auto {
   margin-inline: auto;
 }
-
 .m-block-sm {
   margin-block: var(--space-sm);
 }
@@ -458,17 +554,6 @@
 }
 
 /* Common Animations */
-.anim-fade-in {
-  animation: fadeIn var(--transition-normal) forwards;
-}
-
-.anim-slide-up {
-  animation: slideUp var(--transition-normal) var(--transition-slow) forwards;
-  opacity: 0;
-}
-.anim-pulse-red {
-  animation: pulse-red 2s infinite;
-}
 
 @keyframes fade-in {
   from {
@@ -497,6 +582,23 @@
   }
   100% {
     box-shadow: inset 0 0 10px hsla(0, 100%, 50%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .anim-fade-in {
+    animation: fadeIn var(--transition-normal) forwards;
+  }
+
+  .anim-slide-up {
+    animation: slideUp var(--transition-normal) var(--transition-slow) forwards;
+    opacity: 0;
+  }
+  .anim-pulse-red {
+    animation: pulse-red 2s infinite;
+  }
+  .pending {
+    animation: fade-in 1s infinite alternate;
   }
 }
 
