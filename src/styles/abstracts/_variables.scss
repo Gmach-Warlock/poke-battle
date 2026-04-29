@@ -1,0 +1,304 @@
+:root {
+  /* Font Families */
+  --font-main: "Luckiest Guy", cursive;
+  --font-second: "Sour Gummy", sans-serif;
+  --font-button: Arial, Helvetica, sans-serif;
+  --font-form: Arial, Helvetica, sans-serif;
+  --font-link: Arial, Helvetica, sans-serif;
+
+  /* Color Bases */
+  --white-hs: 0, 0%;
+  --primary-hs: 240, 100%;
+  --secondary-hs: 60, 100%;
+  --accent-hs: 134, 61%;
+  --fire-hs: 20, 100%;
+  --water-hs: 200, 100%;
+  --grass-hs: 110, 100%;
+  --electric-hs: 45, 100%;
+  --psychic-hs: 330, 100%;
+  --ice-hs: 180, 100%;
+  --dragon-hs: 260, 100%;
+  --ghost-hs: 270, 50%;
+  --poison-hs: 290, 80%;
+  --ground-hs: 35, 60%;
+  --rock-hs: 40, 30%;
+  --bug-hs: 75, 90%;
+  --normal-hs: 0, 0%;
+  --fighting-hs: 0, 75%;
+  --flying-hs: 230, 60%;
+  --steel-hs: 210, 20%;
+  --fairy-hs: 340, 80%;
+  --dark-hs: 0, 0%;
+
+  /* Colors */
+  --color-primary: hsl(240, 100%, 50%);
+  --color-secondary: hsl(52, 100%, 50%);
+  --color-accent: hsl(134, 61%, 50%);
+  --color-fire: hsl(20, 100%, 50%);
+  --color-water: hsl(200, 100%, 50%);
+  --color-grass: hsl(110, 100%, 50%);
+  --color-electric: hsl(45, 100%, 50%);
+  --color-psychic: hsl(330, 100%, 50%);
+  --color-ice: hsl(180, 100%, 50%);
+  --color-dragon: hsl(260, 100%, 50%);
+  --color-ghost: hsl(270, 50%, 50%);
+  --color-poison: hsl(290, 80%, 50%);
+  --color-ground: hsl(35, 60%, 50%);
+  --color-rock: hsl(40, 30%, 50%);
+  --color-bug: hsl(75, 90%, 50%);
+  --color-normal: hsl(0, 0%, 50%);
+  --color-fighting: hsl(0, 75%, 50%);
+  --color-flying: hsl(230, 60%, 50%);
+  --color-steel: hsl(210, 20%, 50%);
+  --color-fairy: hsl(340, 80%, 50%);
+  --color-dark: hsl(0, 0%, 25%);
+
+  /* Font Sizes */
+  --text-sm: 0.85rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 3rem;
+  --text-4xl: 4rem;
+  --text-h1: var(--text-3xl);
+  --text-h2: var(--text-2xl);
+  --text-h3: var(--text-xl);
+  --text-button: 1rem;
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-forty: 40%;
+  --space-half: 50%;
+  --space-three-quarters: 75%;
+  --space-full: 100%;
+  --space-full-height: 100vh;
+  --space-full-width: 100vw;
+  --space-container-tight: 800px;
+  --space-img: 5rem;
+  --space-battle-height: 80vh;
+  --space-battle-width: 100%;
+
+  /* Standard Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Border radius' */
+  --rounded-sm: 0.25rem;
+  --rounded-md: 0.5rem;
+  --rounded-lg: 1rem;
+
+  /* Styling */
+  --filter-brightness: 1.1;
+  --hover-scale: 1.05;
+
+  /* Cursors */
+  --cursor-action: pointer;
+  --cursor-inspect: zoom-in;
+  --cursor-grab: hand;
+  --cursor-disabled: not-allowed;
+  --cursor-info: help;
+
+  /* Layering */
+  --z-below: -10;
+  --z-base: 0;
+  --z-middleground: 100;
+  --z-foreground: 200;
+  --z-overlay: 500;
+  --z-debug: 9999;
+
+  /* Glassmorphism */
+  --glass-blur: 10px;
+  --glass-lightness: 60%;
+  --glass-opacity-low: 0.2;
+  --glass-opacity-mid: 0.6;
+  --glass-opacity-clip: 0.7;
+  --glass-opacity-high: 0.9;
+  --glass-border: 1px solid
+    hsla(
+      var(--type-accent, var(--primary-hs)),
+      var(--lightness-glass),
+      var(--glass-opacity-mid)
+    );
+
+  /* Lightness */
+  --lightness-white: 100%;
+  --lightness-high: 80%;
+  --lightness-gradient-top: 75%;
+  --lightness-gradient-bottom: 35%;
+  --lightness-glass: 70%;
+  --lightness-base: 50%;
+  --lightness-low: 30%;
+  --lightness-shadow: 10%;
+  --lightness-black: 0%;
+
+  /* Shadow */
+  --shadow-sm: 2px 2px 4px;
+  --shadow-md: 4px 4px 8px;
+  --shadow-lg: 5px 5px 10px;
+  --shadow-xl: 10px 10px 15px;
+  --shadow-sm-block: 2px 2px;
+  --shadow-md-block: 4px 4px;
+  --shadow-lg-block: 5px 5px;
+  --shadow-xl-block: 10px 10px;
+  --shadow-sm-narrow: 1px 2px 4px;
+  --shadow-md-narrow: 2px 4px 8px;
+  --shadow-lg-narrow: 3px 5px 10px;
+  --shadow-xl-narrow: 5px 10px 15px;
+  --shadow-inset: -1px -1px 2px;
+  --shadow-text: 0px 0px 8px;
+  --shadow-button: 0px 4px 8px;
+  --shadow-inset-field:
+    inset var(--shadow-sm)
+      hsla(0, 0%, var(--lightness-black), var(--glass-opacity-low)),
+    inset var(--shadow-inset) hsla(0, 0%, var(--lightness-white), 0.1);
+  --box-shadow-button: inset var(--shadow-button)
+    hsla(var(--secondary-hs), var(--lightness-black), var(--glass-opacity-low));
+
+  /* Gradients */
+  --gradient-linear-basic: linear-gradient(
+    to bottom,
+    hsl(var(--secondary-hs), var(--lightness-gradient-top)),
+    hsl(var(--secondary-hs), var(--lightness-gradient-bottom))
+  );
+  --gradient-linear-line50: linear-gradient(
+    to bottom,
+    hsl(var(--secondary-hs), var(--lightness-gradient-top)) 50%,
+    hsl(var(--secondary-hs), var(--lightness-gradient-bottom)) 50%
+  );
+  --gradient-text-pro: linear-gradient(
+    to bottom,
+    hsl(var(--secondary-hs), 90%) 0%,
+    hsl(var(--secondary-hs), 70%) 45%,
+    hsl(var(--secondary-hs), 45%) 55%,
+    hsl(var(--secondary-hs), 25%) 100%
+  );
+  --gradient-linear-stacked-pill:
+    linear-gradient(
+      to bottom,
+      hsla(
+          var(--secondary-hs),
+          var(--lightness-gradient-top),
+          var(--glass-opacity-mid)
+        )
+        50%,
+      hsla(
+          var(--secondary-hs),
+          var(--lightness-gradient-bottom),
+          var(--glass-opacity-mid)
+        )
+        50%
+    ),
+    var(--gradient-linear-basic);
+  --gradient-linear-stacked-pill-hover:
+    linear-gradient(
+      to bottom,
+      hsla(
+          var(--accent-hs),
+          var(--lightness-gradient-top),
+          var(--glass-opacity-mid)
+        )
+        50%,
+      hsla(
+          var(--accent-hs),
+          var(--lightness-gradient-bottom),
+          var(--glass-opacity-mid)
+        )
+        50%
+    ),
+    var(--gradient-linear-basic);
+
+  /* Screen Sizes (Breakpoints) */
+  --screen-xs: 30em; /* 480px  | Mobile Landscape / Large Phones */
+  --screen-sm: 40em; /* 640px  | Phablets / Small Tablets */
+  --screen-md: 48em; /* 768px  | Tablets (Portrait) */
+  --screen-lg: 64em; /* 1024px | Laptops / Desktop / Tablet (Landscape) */
+  --screen-xl: 75em; /* 1200px | Standard Desktop Max */
+  --screen-2xl: 96em; /* 1536px | Ultra-wide / 2K Monitors */
+}
+
+/* Pokemon types and their colors */
+.type-fire {
+  --type-accent: var(--fire-hs);
+}
+.type-water {
+  --type-accent: var(--water-hs);
+}
+.type-grass {
+  --type-accent: var(--grass-hs);
+}
+.type-electric {
+  --type-accent: var(--electric-hs);
+}
+.type-psychic {
+  --type-accent: var(--psychic-hs);
+}
+.type-ice {
+  --type-accent: var(--ice-hs);
+}
+.type-dragon {
+  --type-accent: var(--dragon-hs);
+}
+.type-ghost {
+  --type-accent: var(--ghost-hs);
+}
+.type-poison {
+  --type-accent: var(--poison-hs);
+}
+.type-ground {
+  --type-accent: var(--ground-hs);
+}
+.type-rock {
+  --type-accent: var(--rock-hs);
+}
+.type-bug {
+  --type-accent: var(--bug-hs);
+}
+.type-normal {
+  --type-accent: var(--normal-hs);
+}
+.type-fighting {
+  --type-accent: var(--fighting-hs);
+}
+.type-flying {
+  --type-accent: var(--flying-hs);
+}
+.type-steel {
+  --type-accent: var(--steel-hs);
+}
+.type-fairy {
+  --type-accent: var(--fairy-hs);
+}
+.type-dark {
+  --type-accent: var(--dark-hs);
+}
+[class^="type-"] {
+  background-color: hsla(
+    var(--type-accent),
+    var(--lightness-glass),
+    var(--glass-opacity-mid)
+  );
+}
+
+.type-flying,
+.type-steel,
+.type-dragon,
+.type-ghost,
+.type-poison,
+.type-water,
+.type-psychic,
+.type-rock,
+.type-fire,
+.type-dark,
+.type-fighting,
+.type-normal,
+.type-ground,
+.type-fairy {
+  color: var(--color-secondary);
+}

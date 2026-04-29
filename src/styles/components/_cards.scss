@@ -1,0 +1,16 @@
+/* Cards */
+.card--light {
+  background-color: hsl(var(--secondary-hs), 80%);
+  color: var(--color-primary);
+  min-height: 4rem;
+  padding-inline: var(--space-xs);
+  border-radius: var(--rounded-md);
+  width: 80%;
+  box-shadow: var(--shadow-lg-narrow)
+    hsla(
+      var(--primary-hs, 0, 0%),
+      var(--lightness-shadow),
+      var(--glass-opacity-high)
+    );
+  border: var(--glass-border);
+}

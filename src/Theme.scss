@@ -1,142 +1,3 @@
-:root {
-  /* Font Families */
-  --font-main: "Luckiest Guy", cursive;
-  --font-second: "Sour Gummy", sans-serif;
-  --font-button: Arial, Helvetica, sans-serif;
-  --font-form: Arial, Helvetica, sans-serif;
-  --font-link: Arial, Helvetica, sans-serif;
-
-  /* Color Bases */
-  --white-hs: 0, 0%;
-  --primary-hs: 240, 100%;
-  --secondary-hs: 60, 100%;
-  --accent-hs: 134, 61%;
-  --fire-hs: 20, 100%;
-  --water-hs: 200, 100%;
-  --grass-hs: 110, 100%;
-  --electric-hs: 45, 100%;
-  --psychic-hs: 330, 100%;
-  --ice-hs: 180, 100%;
-  --dragon-hs: 260, 100%;
-  --ghost-hs: 270, 50%;
-  --poison-hs: 290, 80%;
-  --ground-hs: 35, 60%;
-  --rock-hs: 40, 30%;
-  --bug-hs: 75, 90%;
-  --normal-hs: 0, 0%;
-  --fighting-hs: 0, 75%;
-  --flying-hs: 230, 60%;
-  --steel-hs: 210, 20%;
-  --fairy-hs: 340, 80%;
-  --dark-hs: 0, 0%;
-
-  /* Colors */
-  --color-primary: hsl(240, 100%, 50%);
-  --color-secondary: hsl(52, 100%, 50%);
-  --color-accent: hsl(134, 61%, 50%);
-  --color-fire: hsl(20, 100%, 50%);
-  --color-water: hsl(200, 100%, 50%);
-  --color-grass: hsl(110, 100%, 50%);
-  --color-electric: hsl(45, 100%, 50%);
-  --color-psychic: hsl(330, 100%, 50%);
-  --color-ice: hsl(180, 100%, 50%);
-  --color-dragon: hsl(260, 100%, 50%);
-  --color-ghost: hsl(270, 50%, 50%);
-  --color-poison: hsl(290, 80%, 50%);
-  --color-ground: hsl(35, 60%, 50%);
-  --color-rock: hsl(40, 30%, 50%);
-  --color-bug: hsl(75, 90%, 50%);
-  --color-normal: hsl(0, 0%, 50%);
-  --color-fighting: hsl(0, 75%, 50%);
-  --color-flying: hsl(230, 60%, 50%);
-  --color-steel: hsl(210, 20%, 50%);
-  --color-fairy: hsl(340, 80%, 50%);
-  --color-dark: hsl(0, 0%, 25%);
-
-  --space-battle-height: 80vh;
-  --space-battle-width: 100%;
-}
-
-/* Pokemon types and their colors */
-.type-fire {
-  --type-accent: var(--fire-hs);
-}
-.type-water {
-  --type-accent: var(--water-hs);
-}
-.type-grass {
-  --type-accent: var(--grass-hs);
-}
-.type-electric {
-  --type-accent: var(--electric-hs);
-}
-.type-psychic {
-  --type-accent: var(--psychic-hs);
-}
-.type-ice {
-  --type-accent: var(--ice-hs);
-}
-.type-dragon {
-  --type-accent: var(--dragon-hs);
-}
-.type-ghost {
-  --type-accent: var(--ghost-hs);
-}
-.type-poison {
-  --type-accent: var(--poison-hs);
-}
-.type-ground {
-  --type-accent: var(--ground-hs);
-}
-.type-rock {
-  --type-accent: var(--rock-hs);
-}
-.type-bug {
-  --type-accent: var(--bug-hs);
-}
-.type-normal {
-  --type-accent: var(--normal-hs);
-}
-.type-fighting {
-  --type-accent: var(--fighting-hs);
-}
-.type-flying {
-  --type-accent: var(--flying-hs);
-}
-.type-steel {
-  --type-accent: var(--steel-hs);
-}
-.type-fairy {
-  --type-accent: var(--fairy-hs);
-}
-.type-dark {
-  --type-accent: var(--dark-hs);
-}
-[class^="type-"] {
-  background-color: hsla(
-    var(--type-accent),
-    var(--lightness-glass),
-    var(--glass-opacity-mid)
-  );
-}
-
-.type-flying,
-.type-steel,
-.type-dragon,
-.type-ghost,
-.type-poison,
-.type-water,
-.type-psychic,
-.type-rock,
-.type-fire,
-.type-dark,
-.type-fighting,
-.type-normal,
-.type-ground,
-.type-fairy {
-  color: var(--color-secondary);
-}
-
 .type-is-critical {
   --type-accent: 0, 100%;
   animation: pulse-red 2s infinite;
@@ -201,10 +62,6 @@
   border: var(--glass-border);
 }
 
-.anim-shake {
-  animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-}
-
 @keyframes shake {
   10%,
   90% {
@@ -244,7 +101,10 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .shake-trigger {
-    animation: earthquake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  .anim-shake {
+    animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  }
+  .anim-earthquake {
+    animation: earthquake 0.3s ease-out;
   }
 }
