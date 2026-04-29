@@ -1,6 +1,11 @@
 import { useOutletContext } from "react-router";
 import "./Arena.scss";
 
+/* const menus = {
+  main: ['attack', 'moves', 'ability', 'item'],
+  items: ['potion', 'ether', 'back']
+}; */
+
 function Arena() {
   const { battleState } = useOutletContext();
 
@@ -45,14 +50,6 @@ function Arena() {
         <div className="row--between">
           <p>Status: </p>
           <p>{battleState?.player?.status}</p>
-        </div>
-        <div className="row--between-start">
-          <p>Items: </p>
-          <ul>
-            {battleState?.player?.items.map((item) => (
-              <li>{item.name}</li>
-            ))}
-          </ul>
         </div>
       </div>
       <div className="battle__message container column--centered card--light">

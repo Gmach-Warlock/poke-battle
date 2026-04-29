@@ -14,22 +14,7 @@
 .self-end {
   align-self: flex-end;
 }
-.grid-auto-fit {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-  gap: var(--space-md);
-}
-.grid-12-flat {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--space-md);
-}
-.grid-12-full {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  gap: var(--space-md);
-}
+
 .span-full {
   grid-column: span 12;
 }

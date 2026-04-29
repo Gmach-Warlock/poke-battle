@@ -50,7 +50,6 @@ function Confirm() {
             <li>{battleState?.player?.moves[0]?.move.name}</li>
             <li>{battleState?.player?.moves[1]?.move.name}</li>
             <li>{battleState?.player?.moves[2]?.move.name}</li>
-            <li>{battleState?.player?.moves[3]?.move.name}</li>
           </ul>
           <p>Ability:</p>
           <p>{battleState?.player?.abilities[0].ability.name}</p>
@@ -73,7 +72,6 @@ function Confirm() {
             <li>{battleState?.opponent?.moves[0]?.move.name}</li>
             <li>{battleState?.opponent?.moves[1]?.move.name}</li>
             <li>{battleState?.opponent?.moves[2]?.move.name}</li>
-            <li>{battleState?.opponent?.moves[3]?.move.name}</li>
           </ul>
           <p>Ability:</p>
           <p>{battleState?.opponent?.abilities[0].ability.name}</p>

@@ -90,7 +90,6 @@ function Config() {
               <li>{preview?.moves[0]?.move.name}</li>
               <li>{preview?.moves[1]?.move.name}</li>
               <li>{preview?.moves[2]?.move.name}</li>
-              <li>{preview?.moves[3]?.move.name}</li>
             </ul>
             <p>Ability:</p>
             <p>{preview?.abilities[0].ability.name}</p>

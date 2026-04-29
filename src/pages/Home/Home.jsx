@@ -1,4 +1,4 @@
-import Hero from "../../components/Hero/Hero";
+import Hero from "../../components/ui/Hero/Hero";
 import "./Home.scss";
 
 function Home() {

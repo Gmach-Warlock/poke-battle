@@ -15,7 +15,6 @@
 @use "styles/components/inputs";
 @use "styles/components/overlays";
 
-@use "styles/layout/battle";
 @use "styles/layout/columns";
 @use "styles/layout/containers";
 @use "styles/layout/grid";
@@ -28,3 +27,17 @@
 @use "styles/pages/config";
 @use "styles/pages/confirm";
 @use "styles/pages/home";
+
+/* 10. Scrollbar Styling */
+
+/* Memorize these four commands and you'll never have to right-click a folder again:
+
+mkdir -p src/components src/hooks src/store: The -p flag is "clutch"—it creates the parent and all subfolders in one shot.
+
+touch src/index.css src/main.tsx: This creates empty files instantly. No "Right Click -> New File -> Type Name."
+
+mv: Use this to move your template files. mv ~/Downloads/my-template/src/* ./src/
+
+code .: This is the "magic word." Once you've finished your terminal surgery, type this to open the current folder in VS Code. */
+
+/* alias vite-flash='rm -rf src public && mkdir src public && cp -r ~/path/to/template/src/* ./src/' */

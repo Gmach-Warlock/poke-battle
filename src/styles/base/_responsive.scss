@@ -1,3 +1,5 @@
+@use "sass:map";
+
 /* Responsive Utilities */
 @media (max-width: 768px) {
   .hide-mobile {
@@ -17,7 +19,7 @@ $breakpoints: (
 );
 
 @mixin mq($size) {
-  @media (min-width: map-get($breakpoints, $size)) {
+  @media (min-width: map.get($breakpoints, $size)) {
     @content;
   }
 }
