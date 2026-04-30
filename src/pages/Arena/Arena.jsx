@@ -21,15 +21,14 @@ function Arena() {
         </ul>
       </div>
       <div
-        className={`battle__opponent card--glass type-${battleState?.opponent?.types[0].type.name}`}
+        className={`battle__opponent type-${battleState?.opponent?.types[0].type.name}`}
       >
         <h3>{battleState?.opponent?.name}</h3>
         <img
           src={battleState?.opponent?.sprites.front_default}
           alt={battleState?.opponent?.name}
+          className="img img--battle"
         />
-        <p>{`${battleState?.opponent?.hp} hp`}</p>
-        <p>{`${battleState?.opponent?.mp} mp`}</p>
       </div>
       <div
         className={`battle__player-stats card--glass type-${battleState?.player?.types[0].type.name}`}

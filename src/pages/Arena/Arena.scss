@@ -1,3 +1,8 @@
+.arena {
+  background: var(--gradient-poke-world);
+  height: var(--space-full-height);
+}
+
 .battle__title {
   grid-column: 1 / -1;
 }

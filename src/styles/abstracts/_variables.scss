@@ -81,6 +81,7 @@
   --space-full-width: 100vw;
   --space-container-tight: 800px;
   --space-img: 5rem;
+  --space-img-battle: 7rem;
   --space-battle-height: 80vh;
   --space-battle-width: 100%;
 
@@ -213,6 +214,21 @@
         50%
     ),
     var(--gradient-linear-basic);
+  --gradient-poke-world: linear-gradient(
+    to bottom,
+    hsl(var(--flying-hs), 70%) 0%,
+    hsl(var(--flying-hs), 50%) 0%,
+    hsl(var(--flying-hs), 40%) 68%,
+    hsl(var(--grass-hs), 50%) 68%,
+    hsl(var(--grass-hs), 20%) 100%
+  );
+  --gradient-poke-title: linear-gradient(
+    to bottom,
+    hsl(var(--flying-hs), 60%) 0%,
+    hsl(var(--flying-hs), 50%) 33%,
+    hsl(var(--flying-hs), 40%) 66%,
+    hsl(var(--flying-hs), 20%) 100%
+  );
 
   /* Screen Sizes (Breakpoints) */
   --screen-xs: 30em; /* 480px  | Mobile Landscape / Large Phones */

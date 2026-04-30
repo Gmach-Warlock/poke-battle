@@ -2,8 +2,12 @@
   display: block;
   width: var(--space-img);
   height: auto;
-}
 
-.img__is-expanded:hover {
-  cursor: zoom-out;
+  &--battle {
+    width: 9rem;
+    place-self: center;
+  }
+  &__is-expanded:hover {
+    cursor: zoom-out;
+  }
 }

@@ -18,14 +18,13 @@ button {
   padding-block: var(--space-xs);
   transition: all var(--transition-fast);
   cursor: var(--hover-cursor);
-}
 
-button:hover {
-  background-image: var(--gradient-linear-stacked-pill-hover);
-  filter: var(--filter-brightness);
-  transform: var(--hover-scale);
-}
-
-button:active {
-  border: var(--glass-border);
+  &:hover {
+    background-image: var(--gradient-linear-stacked-pill-hover);
+    filter: var(--filter-brightness);
+    transform: var(--hover-scale);
+  }
+  &:active {
+    border: var(--glass-border);
+  }
 }
